@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   root "projects#index"
 
   resources :projects do
@@ -6,6 +7,10 @@ Rails.application.routes.draw do
   end
 
   resources :users
+
+  namespace :admin do
+    resources :users
+  end
 
   get "/signin", to: "sessions#new"
   post "/signin", to: "sessions#create"
