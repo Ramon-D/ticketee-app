@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   		flash[:notice] = "You have signed up successfully."
   		redirect_to projects_path
   	else 
-  		render new
+  		render :new
   	end
   end
 
@@ -35,6 +35,7 @@ class UsersController < ApplicationController
     end
   	def user_params
   		params.require(:user).permit(:name,
+                                   :email,
   																 :password,
   																 :password_confirmation)
   	end
