@@ -38,6 +38,8 @@ gem 'bcrypt', '~> 3.1.7'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'cancan', '~> 1.6.10'
+
 group :test, :development do
   gem 'rspec-rails', "~> 2.14"
 end
