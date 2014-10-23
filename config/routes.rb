@@ -9,12 +9,18 @@ Rails.application.routes.draw do
   resources :users
 
   namespace :admin do
-    root :to => "base#index"
-    resources :users
+    root to: "base#index"
+    resources :users do
+      resources :permissions
+
+      put "permissions", to: "permissions#set",
+                         as: "set_permissions"
+    end
   end
 
   get "/signin", to: "sessions#new"
   post "/signin", to: "sessions#create"
+  delete "/signout", to: "sessions#destroy", as: "signout"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
