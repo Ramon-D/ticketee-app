@@ -39,6 +39,7 @@ gem 'bcrypt', '~> 3.1.7'
 # gem 'debugger', group: [:development, :test]
 
 gem 'cancan', '~> 1.6.10'
+gem 'carrierwave'
 
 group :test, :development do
   gem 'rspec-rails', "~> 2.14"
