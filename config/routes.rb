@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   end
 
   resources :users
+  resources :files
 
   namespace :admin do
     root to: "base#index"
