@@ -38,8 +38,8 @@ feature "Creating comments" do
     select "Open", from: "State"
     click_button "Create Comment" 
     expect(page).to have_content("Comment has been created.")
-    within("#ticket .state") do
-      expect(page).to have_content("Open")
+    within("#comments") do
+      expect(page).to have_content("State: Open")
     end
   end 
 end 
