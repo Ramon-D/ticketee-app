@@ -1,0 +1,11 @@
+<% State.all.each do |state| %>
+  .state_<%= state.name.parameterize %> {
+    background: <%= state.background %>;
+    color: <%= state.color %>;
+    display: inline-block;
+    padding: 5px 10px;
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;    
+  }
+<% end %>
