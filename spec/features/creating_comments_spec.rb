@@ -43,12 +43,4 @@ feature "Creating comments" do
       expect(page).to have_content("State: Open")
     end
   end 
-
-  scenario "A user without permission cannot change the state" do
-    click_link ticket.title
-    message = 'Unable to find css "#comment_state_id"'
-    expect {
-      find("#comment_state_id")
-    }.to raise_error(Capybara::ElementNotFound, message)
-  end
 end 
