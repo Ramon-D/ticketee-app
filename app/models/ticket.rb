@@ -12,6 +12,27 @@ class Ticket < ActiveRecord::Base
   validates :description, presence: true, length: { minimum: 10 }
 
   before_create :associate_tags
+
+  def self.search(query)
+    terms = {}
+    query.split(" ")
+    .map do |query|
+      k, v = query.split(":")
+      terms[k] = v
+    end
+
+    relation = all
+
+    if terms.has_key?("tag")
+      relation = joins(:tags).where("tags.name = ?", terms['tag']) 
+    end
+
+    if terms.has_key?("state")
+      relation = joins(:state).where("states.name = ?", terms['state']) 
+    end
+
+    relation
+  end
 	
 	private
   
