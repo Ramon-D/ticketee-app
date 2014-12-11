@@ -7,7 +7,7 @@ feature "Ticket Notifications" do
   let!(:ticket) do
     FactoryGirl.create(:ticket,
                        :project => project,
-                       :user => alice)
+                       :user    => alice)
   end
   
   before do

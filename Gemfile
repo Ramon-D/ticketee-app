@@ -44,6 +44,7 @@ gem 'rails-observers'
 
 group :test, :development do
   gem 'rspec-rails', "~> 2.14"
+  gem 'gmail'
 end
 group :test do
   gem 'capybara', "2.1.0"
