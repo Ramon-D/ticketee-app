@@ -4,8 +4,9 @@ describe Notifier do
   context "comment_updated" do
   let!(:project)      { FactoryGirl.create(:project) }
   let!(:ticket_owner) { FactoryGirl.create(:user) }
-  let!(:ticket)       { FactoryGirl.create(:ticket, :project => project,
-                                                    :user => ticket_owner) }
+  let!(:ticket)       { FactoryGirl.create(:ticket, 
+                                           :project => project,
+                                           :user => ticket_owner) }
   let!(:commenter)    { FactoryGirl.create(:user) }
     let(:comment) do
       Comment.new({ 
@@ -25,6 +26,11 @@ describe Notifier do
       email.body.should include(title)
       email.body.should include("#{comment.user.email} wrote:")
       email.body.should include(comment.text)
+    end
+
+    it "correctly sets the Reply-To" do
+      address = "ramonnetflower+#{project.id}+#{ticket.id}@gmail.com"
+      email.reply_to.should == [address]
     end
   end 
 end
