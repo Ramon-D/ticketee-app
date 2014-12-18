@@ -26,3 +26,7 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+sites:
+	1.) https://gentle-beyond-1173.herokuapp.com
+	2.) https://git.heroku.com/gentle-beyond-1173.git

@@ -41,6 +41,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'cancan', '~> 1.6.10'
 gem 'carrierwave'
 gem 'rails-observers'
+gem 'fog'
 
 group :test, :development do
   gem 'rspec-rails', "~> 2.14"
