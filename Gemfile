@@ -42,6 +42,7 @@ gem 'cancan', '~> 1.6.10'
 gem 'carrierwave'
 gem 'rails-observers'
 gem 'fog'
+gem 'rails_12factor', group: :production
 
 group :test, :development do
   gem 'rspec-rails', "~> 2.14"
